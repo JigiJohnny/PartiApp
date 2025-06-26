@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
   FlatList,
   TouchableOpacity,
   StyleSheet,
-  Button,
   ActivityIndicator,
+  Button,
 } from 'react-native';
+import * as Location from 'expo-location';
+import { getDistance } from 'geolib';
 
 const mockOffers = [
   {
@@ -16,6 +18,8 @@ const mockOffers = [
     description: 'Schatzsuche im Stadtpark!',
     category: 'Outdoor',
     date: '2025-06-28',
+    latitude: 51.5363,
+    longitude: 7.2005,
   },
   {
     id: '2',
@@ -23,30 +27,76 @@ const mockOffers = [
     description: 'Filmspaß im Jugendzentrum.',
     category: 'Kultur',
     date: '2025-07-01',
+    latitude: 51.5309,
+    longitude: 7.2145,
   },
   {
     id: '3',
     title: 'Sport im Freien',
-    description: 'Spiele und Bewegung auf dem Bolzplatz.',
+    description: 'Spiele auf dem Bolzplatz.',
     category: 'Sport',
     date: '2025-07-02',
+    latitude: 51.534,
+    longitude: 7.209,
   },
 ];
 
 export default function HomeScreen({ navigation }) {
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [userCoords, setUserCoords] = useState(null);
 
   useEffect(() => {
-    // Simuliere asynchrones Laden (z. B. aus lokaler Datei oder API)
-    const loadLocalOffers = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // künstliche Ladezeit
-      setOffers(mockOffers);
-      setLoading(false);
+    const loadAndSort = async () => {
+      try {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          console.warn('Standort nicht erlaubt – keine Sortierung möglich.');
+          setOffers(mockOffers);
+          setLoading(false);
+          return;
+        }
+
+        const location = await Location.getCurrentPositionAsync({});
+        const coords = {
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        };
+        setUserCoords(coords);
+
+        const sorted = [...mockOffers].sort((a, b) => {
+          const distA = getDistance(coords, {
+            latitude: a.latitude,
+            longitude: a.longitude,
+          });
+          const distB = getDistance(coords, {
+            latitude: b.latitude,
+            longitude: b.longitude,
+          });
+          return distA - distB;
+        });
+
+        setOffers(sorted);
+      } catch (error) {
+        console.error('Fehler bei Standort oder Sortierung:', error);
+        setOffers(mockOffers);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    loadLocalOffers();
+    loadAndSort();
   }, []);
+
+  const formatDistance = (offer) => {
+    if (!userCoords) return '';
+    const dist = getDistance(userCoords, {
+      latitude: offer.latitude,
+      longitude: offer.longitude,
+    });
+    if (dist < 1000) return `${dist} m entfernt`;
+    return `${(dist / 1000).toFixed(1)} km entfernt`;
+  };
 
   if (loading) {
     return (
@@ -59,7 +109,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Kinder-Angebote in deiner Stadt</Text>
+      <Text style={styles.header}>Kinder-Angebote in deiner Nähe 🎈</Text>
 
       <View style={styles.buttonRow}>
         <View style={styles.button}>
@@ -102,6 +152,8 @@ export default function HomeScreen({ navigation }) {
           >
             <Text style={styles.title}>{item.title}</Text>
             <Text>{item.date}</Text>
+            <Text>{item.category}</Text>
+            <Text style={styles.distance}>{formatDistance(item)}</Text>
             <Text>{item.description}</Text>
           </TouchableOpacity>
         )}
@@ -113,14 +165,25 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  header: { fontSize: 22, marginBottom: 10, textAlign: 'center', fontWeight: 'bold' },
-  buttonRow: { flexDirection: 'column', marginBottom: 20 },
-  button: { marginBottom: 10 },
+  header: {
+    fontSize: 22,
+    marginBottom: 10,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  buttonRow: {
+    flexDirection: 'column',
+    marginBottom: 20,
+  },
+  button: {
+    marginBottom: 10,
+  },
   card: {
+    backgroundColor: '#f0f8ff',
     padding: 15,
     marginBottom: 10,
-    backgroundColor: '#f0f8ff',
     borderRadius: 10,
   },
-  title: { fontWeight: 'bold' },
+  title: { fontWeight: 'bold', fontSize: 18 },
+  distance: { marginTop: 4, fontStyle: 'italic', color: '#555' },
 });

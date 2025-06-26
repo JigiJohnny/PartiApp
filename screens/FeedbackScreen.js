@@ -1,39 +1,37 @@
-// === screens/FeedbackScreen.js ===
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, Alert } from 'react-native';
 
 export default function FeedbackScreen({ navigation }) {
-  const [feedbackSent, setFeedbackSent] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const sendFeedback = () => {
-    setFeedbackSent(true);
-    Alert.alert('Danke!', 'Dein Feedback wurde gespeichert.');
-    navigation.goBack();
+  const handleFeedback = (feedbackType) => {
+    setSubmitted(true);
+    Alert.alert('Danke für dein Feedback!', `Du hast ausgewählt: ${feedbackType}`);
+    navigation.goBack(); 
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Wie hat dir das Angebot gefallen?</Text>
-      {!feedbackSent && (
-        <>
-          <Button title="👍 Super!" onPress={sendFeedback} />
-          <Button title="😐 Ganz okay" onPress={sendFeedback} />
-          <Button title="👎 Nicht so gut" onPress={sendFeedback} />
-        </>
-      )}
+      <Text style={styles.title}>Wie hat dir das Angebot gefallen?</Text>
+
+      <View style={styles.buttonRow}>
+        <View style={styles.button}>
+          <Button title="👍 Super!" onPress={() => handleFeedback('👍')} color="#4CAF50" />
+        </View>
+        <View style={styles.button}>
+          <Button title="😐 Ganz okay" onPress={() => handleFeedback('😐')} color="#FFC107" />
+        </View>
+        <View style={styles.button}>
+          <Button title="👎 Nicht so gut" onPress={() => handleFeedback('👎')} color="#F44336" />
+        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-  },
-  header: {
-    fontSize: 22,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
+  container: { flex: 1, justifyContent: 'center', padding: 20 },
+  title: { fontSize: 22, textAlign: 'center', marginBottom: 20 },
+  buttonRow: { flexDirection: 'column', gap: 15 },
+  button: { marginBottom: 10 },
 });
