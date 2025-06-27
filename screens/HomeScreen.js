@@ -6,10 +6,18 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
-  Button,
+  Image,
+  SafeAreaView,
+  Dimensions,
 } from 'react-native';
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
+import logo from '../assets/images/PartiApp_Logo.png';
+
+const { width } = Dimensions.get('window');
+
+const BUTTON_FONT_SIZE = width * 0.035;
+const BUTTON_ICON_SIZE = width * 0.05;
 
 const mockOffers = [
   {
@@ -107,83 +115,126 @@ export default function HomeScreen({ navigation }) {
     );
   }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Kinder-Angebote in deiner Nähe 🎈</Text>
+  // Eigenen Button bauen mit Emoji und Text, damit alles perfekt mittig ist
+  const FooterButton = ({ emoji, text, onPress, color }) => (
+    <TouchableOpacity style={styles.footerButton} onPress={onPress} activeOpacity={0.7}>
+      <Text style={[styles.footerButtonText, { color }]}>{emoji}</Text>
+      <Text style={[styles.footerButtonText, { color, marginTop: 2 }]}>{text}</Text>
+    </TouchableOpacity>
+  );
 
-      <View style={styles.buttonRow}>
-        <View style={styles.button}>
-          <Button
-            title="💬 Feedback geben"
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        {/* Logo ganz oben */}
+        <Image source={logo} style={styles.logo} resizeMode="contain" />
+
+        <Text style={styles.header}>Kinder-Angebote in deiner Nähe 🎈</Text>
+
+        <FlatList
+          data={offers}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigation.navigate('Details', { offer: item })}
+            >
+              <Text style={styles.title}>{item.title}</Text>
+              <Text>{item.date}</Text>
+              <Text>{item.category}</Text>
+              <Text style={styles.distance}>{formatDistance(item)}</Text>
+              <Text>{item.description}</Text>
+            </TouchableOpacity>
+          )}
+        />
+
+        {/* Footer mit eigenen Buttons */}
+        <View style={styles.footer}>
+          <FooterButton
+            emoji="💬"
+            text="Feedback"
             onPress={() => navigation.navigate('Feedback')}
             color="#4CAF50"
           />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="🗳️ Mitmachen & Abstimmen"
+          <FooterButton
+            emoji="🗳️"
+            text="Mitmachen"
             onPress={() => navigation.navigate('Participation')}
             color="#2196F3"
           />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="🗺️ Stadtkarte mit Angeboten"
+          <FooterButton
+            emoji="🗺️"
+            text="Karte"
             onPress={() => navigation.navigate('Map')}
             color="#FF9800"
           />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="👤 Interessen festlegen"
+          <FooterButton
+            emoji="👤"
+            text="Interessen"
             onPress={() => navigation.navigate('Profile')}
             color="#9C27B0"
           />
         </View>
       </View>
-
-      <FlatList
-        data={offers}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => navigation.navigate('Details', { offer: item })}
-          >
-            <Text style={styles.title}>{item.title}</Text>
-            <Text>{item.date}</Text>
-            <Text>{item.category}</Text>
-            <Text style={styles.distance}>{formatDistance(item)}</Text>
-            <Text>{item.description}</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  safeArea: { flex: 1, backgroundColor: '#fff' },
+  container: { flex: 1, paddingHorizontal: 20 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+
+  logo: {
+    width: width * 0.5,
+    height: width * 0.2,
+    alignSelf: 'center',
+    marginVertical: 15,
+  },
+
   header: {
-    fontSize: 22,
+    fontSize: width * 0.06,
     marginBottom: 10,
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  buttonRow: {
-    flexDirection: 'column',
-    marginBottom: 20,
-  },
-  button: {
-    marginBottom: 10,
-  },
+
   card: {
     backgroundColor: '#f0f8ff',
     padding: 15,
     marginBottom: 10,
     borderRadius: 10,
   },
-  title: { fontWeight: 'bold', fontSize: 18 },
-  distance: { marginTop: 4, fontStyle: 'italic', color: '#555' },
+
+  title: {
+    fontWeight: 'bold',
+    fontSize: width * 0.045,
+  },
+
+  distance: {
+    marginTop: 4,
+    fontStyle: 'italic',
+    color: '#555',
+  },
+
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 12,
+    borderTopWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+  },
+
+  footerButton: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 6,
+  },
+
+  footerButtonText: {
+    fontSize: BUTTON_FONT_SIZE,
+    textAlign: 'center',
+  },
 });
