@@ -90,6 +90,7 @@ export default function ProfileScreen({ setUser }) {
           PREFS_COLLECTION_ID,
           ID.unique(),
           {
+            userId: user.$id,
             categories: selectedCategories,
             feedback: 0,
             favorites: "none"
