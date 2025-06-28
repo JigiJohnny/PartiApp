@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, SafeAreaView, ScrollView } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import * as Location from 'expo-location';
 
@@ -61,80 +61,87 @@ export default function MapScreen({ navigation }) {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <ScrollView horizontal style={styles.categoryBar} contentContainerStyle={{ paddingHorizontal: 10 }}>
-        {categories.map((cat) => (
-          <TouchableOpacity
-            key={cat}
-            onPress={() => setSelectedCategory(cat)}
-            style={[
-              styles.categoryButton,
-              selectedCategory === cat && styles.categoryButtonActive,
-            ]}
-          >
-            <Text
-              style={[
-                styles.categoryText,
-                selectedCategory === cat && styles.categoryTextActive,
-              ]}
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 51.5350,
+            longitude: 7.2100,
+            latitudeDelta: 0.02,
+            longitudeDelta: 0.02,
+          }}
+          showsUserLocation={true}
+        >
+          {filteredOffers.map((offer) => (
+            <Marker
+              key={offer.id}
+              coordinate={{ latitude: offer.latitude, longitude: offer.longitude }}
             >
-              {cat}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+              <Callout onPress={() => navigation.navigate('Details', { offer })}>
+                <View style={{ maxWidth: 200 }}>
+                  <Text style={{ fontWeight: 'bold' }}>{offer.title}</Text>
+                  <Text>{offer.description}</Text>
+                  <Text style={{ fontStyle: 'italic' }}>{offer.category}</Text>
+                  <Text style={{ color: '#888' }}>{offer.date}</Text>
+                  <Text style={{ color: 'blue', marginTop: 5 }}>➤ Details anzeigen</Text>
+                </View>
+              </Callout>
+            </Marker>
+          ))}
 
-      <MapView
-        style={StyleSheet.absoluteFillObject}
-        initialRegion={{
-          latitude: 51.5350,
-          longitude: 7.2100,
-          latitudeDelta: 0.02,
-          longitudeDelta: 0.02,
-        }}
-        showsUserLocation={true}
-      >
-        {filteredOffers.map((offer) => (
-          <Marker
-            key={offer.id}
-            coordinate={{ latitude: offer.latitude, longitude: offer.longitude }}
-          >
-            <Callout onPress={() => navigation.navigate('Details', { offer })}>
-              <View style={{ maxWidth: 200 }}>
-                <Text style={{ fontWeight: 'bold' }}>{offer.title}</Text>
-                <Text>{offer.description}</Text>
-                <Text style={{ fontStyle: 'italic' }}>{offer.category}</Text>
-                <Text style={{ color: '#888' }}>{offer.date}</Text>
-                <Text style={{ color: 'blue', marginTop: 5 }}>➤ Details anzeigen</Text>
-              </View>
-            </Callout>
-          </Marker>
-        ))}
+          {userLocation && (
+            <Marker
+              coordinate={userLocation}
+              title="Du bist hier"
+              pinColor="blue"
+            />
+          )}
+        </MapView>
 
-        {userLocation && (
-          <Marker
-            coordinate={userLocation}
-            title="Du bist hier"
-            pinColor="blue"
-          />
-        )}
-      </MapView>
-    </View>
+        {/* Chips-Bar über der Map */}
+        <View style={styles.chipContainer}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 10 }}>
+            {categories.map((cat) => (
+              <TouchableOpacity
+                key={cat}
+                onPress={() => setSelectedCategory(cat)}
+                style={[
+                  styles.chip,
+                  selectedCategory === cat && styles.chipActive
+                ]}
+              >
+                <Text style={[
+                  styles.chipText,
+                  selectedCategory === cat && styles.chipTextActive
+                ]}>
+                  {cat}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  categoryBar: {
+  safeArea: { flex: 1, backgroundColor: '#fff' },
+  container: { flex: 1 },
+  map: { flex: 1 },
+
+  chipContainer: {
     position: 'absolute',
     top: 10,
+    left: 0,
+    right: 0,
     zIndex: 10,
     flexDirection: 'row',
+    paddingVertical: 6,
   },
-  categoryButton: {
-    backgroundColor: '#fff',
+  chip: {
+    backgroundColor: 'rgba(255,255,255,0.8)',
     paddingVertical: 6,
     paddingHorizontal: 14,
     borderRadius: 20,
@@ -142,15 +149,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#aaa',
   },
-  categoryButtonActive: {
+  chipActive: {
     backgroundColor: '#2196F3',
     borderColor: '#1976D2',
   },
-  categoryText: {
+  chipText: {
     fontSize: 14,
     color: '#333',
   },
-  categoryTextActive: {
+  chipTextActive: {
     color: '#fff',
     fontWeight: 'bold',
   },
