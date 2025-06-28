@@ -13,6 +13,8 @@ import {
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
 import logo from '../assets/images/PartiApp_Logo.png';
+import { styles } from '../styling/HomeScreen.style';
+
 
 const { width } = Dimensions.get('window');
 
@@ -169,6 +171,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#fff' },
   container: { flex: 1, paddingHorizontal: 20 },
@@ -227,3 +230,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+*/

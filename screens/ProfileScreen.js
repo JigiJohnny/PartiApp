@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { databases, account } from '../appwriteConfig';
 import { Permission, ID } from 'appwrite';
+import { styles } from '../styling/ProfileScreen.style';
 
 const DATABASE_ID = '685ff7d300149bd01e90';
 const PREFS_COLLECTION_ID = '685ff804002f2c6e4df9';
@@ -213,6 +214,7 @@ export default function ProfileScreen({ setUser }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   scrollContainer: { padding: 20 },
   sectionTitle: {
@@ -262,3 +264,4 @@ const styles = StyleSheet.create({
   },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
 });
+*/

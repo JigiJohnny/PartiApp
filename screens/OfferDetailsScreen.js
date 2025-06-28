@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Button, Alert, Dimensions, Linking } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { styles } from '../styling/OfferDetailsScreen.style';
 
 export default function OfferDetailsScreen({ route, navigation }) {
   const { offer } = route.params;
@@ -80,6 +81,7 @@ export default function OfferDetailsScreen({ route, navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
@@ -98,3 +100,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/

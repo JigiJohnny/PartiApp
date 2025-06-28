@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 import { databases, account } from '../appwriteConfig';
 import { Permission } from 'appwrite';
+import { styles } from '../styling/FavoritScreen.style';
 
 export default function FavoritesScreen({ route, navigation }) {
   const { offer } = route.params;
@@ -43,7 +44,10 @@ export default function FavoritesScreen({ route, navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
   text: { fontSize: 18, textAlign: 'center', marginBottom: 20 }
 });
+*/
+

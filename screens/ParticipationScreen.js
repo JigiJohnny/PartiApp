@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import { account, databases } from '../appwriteConfig';
 import { ID, Permission } from 'appwrite';
+import { styles } from '../styling/ParticipationScreen.style';
+
 
 const DATABASE_ID = '685ff7d300149bd01e90';
 const PARTICIPATIONS_COLLECTION_ID = '68600db0000187a5eda8';
@@ -120,6 +122,7 @@ export default function ParticipationScreen({ navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -164,3 +167,4 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+*/

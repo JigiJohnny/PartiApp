@@ -12,6 +12,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { account } from '../appwriteConfig';
+import {styles} from "../styling/AuthScreen.style";
 
 export default function AuthScreen({ navigation, setUser }) {
   const [email, setEmail] = useState('');
@@ -130,6 +131,8 @@ export default function AuthScreen({ navigation, setUser }) {
   );
 }
 
+/*
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -169,3 +172,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+*/

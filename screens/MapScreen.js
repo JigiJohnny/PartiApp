@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert, SafeAreaView, ScrollView } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { styles } from '../styling/MapScreen.style';
+
 
 const offers = [
   {
@@ -126,6 +128,7 @@ export default function MapScreen({ navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#fff' },
   container: { flex: 1 },
@@ -162,3 +165,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+*/
