@@ -1,37 +1,54 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, Alert } from 'react-native';
+import React from 'react';
+import { View, Text, Button, StyleSheet, Alert } from 'react-native';
+import { databases, account } from '../appwriteConfig';
+import { Permission } from 'appwrite';
 
-export default function FeedbackScreen({ navigation }) {
-  const [submitted, setSubmitted] = useState(false);
+export default function FeedbackScreen({ route, navigation }) {
+  const { offer } = route.params;
 
-  const handleFeedback = (feedbackType) => {
-    setSubmitted(true);
-    Alert.alert('Danke für dein Feedback!', `Du hast ausgewählt: ${feedbackType}`);
-    navigation.goBack(); 
+  const sendFeedback = async (value) => {
+    try {
+      const user = await account.get();
+
+      await databases.createDocument(
+        '685ff7d300149bd01e90',
+        '685ff804002f2c6e4df9',
+        'unique()',
+        {
+          categories: [],
+          feedback: value, // 1 = 👍, 0 = 😐, -1 = 👎
+          favorites: "none"
+        },
+        [
+          Permission.read(`user:${user.$id}`),
+          Permission.update(`user:${user.$id}`),
+          Permission.delete(`user:${user.$id}`),
+          Permission.write(`user:${user.$id}`)
+        ]
+      );
+
+      Alert.alert('Danke!', 'Dein Feedback wurde gespeichert.');
+      navigation.goBack();
+    } catch (err) {
+      console.error(err);
+      Alert.alert('Fehler', err.message);
+    }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Wie hat dir das Angebot gefallen?</Text>
+      <Text style={styles.header}>
+        Wie hat dir {offer?.title || 'dieses Angebot'} gefallen?
+      </Text>
 
-      <View style={styles.buttonRow}>
-        <View style={styles.button}>
-          <Button title="👍 Super!" onPress={() => handleFeedback('👍')} color="#4CAF50" />
-        </View>
-        <View style={styles.button}>
-          <Button title="😐 Ganz okay" onPress={() => handleFeedback('😐')} color="#FFC107" />
-        </View>
-        <View style={styles.button}>
-          <Button title="👎 Nicht so gut" onPress={() => handleFeedback('👎')} color="#F44336" />
-        </View>
-      </View>
+      <Button title="👍 Super!" onPress={() => sendFeedback(1)} />
+      <Button title="😐 Ganz okay" onPress={() => sendFeedback(0)} />
+      <Button title="👎 Nicht so gut" onPress={() => sendFeedback(-1)} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20 },
-  title: { fontSize: 22, textAlign: 'center', marginBottom: 20 },
-  buttonRow: { flexDirection: 'column', gap: 15 },
-  button: { marginBottom: 10 },
+  header: { fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' },
 });

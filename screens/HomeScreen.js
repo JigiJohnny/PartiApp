@@ -17,7 +17,6 @@ import logo from '../assets/images/PartiApp_Logo.png';
 const { width } = Dimensions.get('window');
 
 const BUTTON_FONT_SIZE = width * 0.035;
-const BUTTON_ICON_SIZE = width * 0.05;
 
 const mockOffers = [
   {
@@ -115,7 +114,6 @@ export default function HomeScreen({ navigation }) {
     );
   }
 
-  // Eigenen Button bauen mit Emoji und Text, damit alles perfekt mittig ist
   const FooterButton = ({ emoji, text, onPress, color }) => (
     <TouchableOpacity style={styles.footerButton} onPress={onPress} activeOpacity={0.7}>
       <Text style={[styles.footerButtonText, { color }]}>{emoji}</Text>
@@ -126,9 +124,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* Logo ganz oben */}
         <Image source={logo} style={styles.logo} resizeMode="contain" />
-
         <Text style={styles.header}>Kinder-Angebote in deiner Nähe 🎈</Text>
 
         <FlatList
@@ -148,14 +144,7 @@ export default function HomeScreen({ navigation }) {
           )}
         />
 
-        {/* Footer mit eigenen Buttons */}
         <View style={styles.footer}>
-          <FooterButton
-            emoji="💬"
-            text="Feedback"
-            onPress={() => navigation.navigate('Feedback')}
-            color="#4CAF50"
-          />
           <FooterButton
             emoji="🗳️"
             text="Mitmachen"
@@ -170,7 +159,7 @@ export default function HomeScreen({ navigation }) {
           />
           <FooterButton
             emoji="👤"
-            text="Interessen"
+            text="Profil"
             onPress={() => navigation.navigate('Profile')}
             color="#9C27B0"
           />
