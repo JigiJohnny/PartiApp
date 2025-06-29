@@ -13,10 +13,13 @@ import {
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
 import logo from '../assets/images/PartiApp_Logo.png';
+import { databases, account } from '../appwriteConfig';
 
 const { width } = Dimensions.get('window');
-
 const BUTTON_FONT_SIZE = width * 0.035;
+
+const DATABASE_ID = '685ff7d300149bd01e90';
+const PREFS_COLLECTION_ID = '685ff804002f2c6e4df9';
 
 const mockOffers = [
   {
@@ -52,15 +55,16 @@ export default function HomeScreen({ navigation }) {
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userCoords, setUserCoords] = useState(null);
+  const [interests, setInterests] = useState([]);
 
   useEffect(() => {
-    const loadAndSort = async () => {
+    const loadData = async () => {
       try {
+        // Standort holen
         const { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
-          console.warn('Standort nicht erlaubt – keine Sortierung möglich.');
+          console.warn('Standort nicht erlaubt');
           setOffers(mockOffers);
-          setLoading(false);
           return;
         }
 
@@ -71,28 +75,47 @@ export default function HomeScreen({ navigation }) {
         };
         setUserCoords(coords);
 
-        const sorted = [...mockOffers].sort((a, b) => {
-          const distA = getDistance(coords, {
-            latitude: a.latitude,
-            longitude: a.longitude,
-          });
-          const distB = getDistance(coords, {
-            latitude: b.latitude,
-            longitude: b.longitude,
-          });
-          return distA - distB;
+        // Interessen laden
+        try {
+          const user = await account.get();
+          const prefsResult = await databases.listDocuments(DATABASE_ID, PREFS_COLLECTION_ID);
+          const myPrefs = prefsResult.documents.find(d =>
+            d.$permissions.includes(`read("user:${user.$id}")`)
+          );
+          if (myPrefs) {
+            setInterests(myPrefs.categories);
+          }
+        } catch (err) {
+          console.log('⚠️ Kein Login oder keine Interessen:', err.message);
+        }
+
+        // Angebote mit Score berechnen
+        const scored = mockOffers.map(offer => {
+          let score = 0;
+          if (interests.includes(offer.category)) score += 20;
+          if (userCoords) {
+            const dist = getDistance(coords, {
+              latitude: offer.latitude,
+              longitude: offer.longitude,
+            }) / 1000;
+            score -= dist; // weiter weg = weniger Punkte
+          }
+          return { ...offer, score };
         });
 
-        setOffers(sorted);
-      } catch (error) {
-        console.error('Fehler bei Standort oder Sortierung:', error);
+        // Sortieren nach Score
+        scored.sort((a, b) => b.score - a.score);
+
+        setOffers(scored);
+      } catch (err) {
+        console.error('Fehler:', err);
         setOffers(mockOffers);
       } finally {
         setLoading(false);
       }
     };
 
-    loadAndSort();
+    loadData();
   }, []);
 
   const formatDistance = (offer) => {
@@ -125,7 +148,7 @@ export default function HomeScreen({ navigation }) {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Image source={logo} style={styles.logo} resizeMode="contain" />
-        <Text style={styles.header}>Kinder-Angebote in deiner Nähe 🎈</Text>
+        <Text style={styles.header}>Empfohlene Angebote 🎯</Text>
 
         <FlatList
           data={offers}
@@ -173,39 +196,33 @@ const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#fff' },
   container: { flex: 1, paddingHorizontal: 20 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-
   logo: {
     width: width * 0.5,
     height: width * 0.2,
     alignSelf: 'center',
     marginVertical: 15,
   },
-
   header: {
     fontSize: width * 0.06,
     marginBottom: 10,
     textAlign: 'center',
     fontWeight: 'bold',
   },
-
   card: {
     backgroundColor: '#f0f8ff',
     padding: 15,
     marginBottom: 10,
     borderRadius: 10,
   },
-
   title: {
     fontWeight: 'bold',
     fontSize: width * 0.045,
   },
-
   distance: {
     marginTop: 4,
     fontStyle: 'italic',
     color: '#555',
   },
-
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -214,14 +231,12 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     backgroundColor: '#fff',
   },
-
   footerButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 6,
   },
-
   footerButtonText: {
     fontSize: BUTTON_FONT_SIZE,
     textAlign: 'center',
