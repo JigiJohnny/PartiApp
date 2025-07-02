@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 import { databases, account } from '../appwriteConfig';
 import { Permission } from 'appwrite';
+import { styles } from '../styling/FeedbackScreen.style';
+
 
 export default function FeedbackScreen({ route, navigation }) {
   const { offer } = route.params;
@@ -48,7 +50,9 @@ export default function FeedbackScreen({ route, navigation }) {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20 },
   header: { fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' },
 });
+*/
