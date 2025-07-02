@@ -14,7 +14,7 @@ import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
 import logo from '../assets/images/PartiApp_Logo.png';
 import { styles } from '../styling/HomeScreen.style';
-
+import { databases, account } from '../appwriteConfig';
 
 const { width } = Dimensions.get('window');
 
