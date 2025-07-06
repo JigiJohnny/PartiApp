@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
-import logo from '../assets/images/PartiApp_Logo.png';
+import logo from '../assets/images/logo.png';
 import { databases, account } from '../appwriteConfig';
 import {styles} from '../styling/HomeScreen.style'
 const { width } = Dimensions.get('window');
