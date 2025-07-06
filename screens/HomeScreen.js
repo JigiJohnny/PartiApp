@@ -12,11 +12,9 @@ import {
 } from 'react-native';
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
-import mqtt from 'mqtt';
 import logo from '../assets/images/PartiApp_Logo.png';
-import { styles } from '../styling/HomeScreen.style';
 import { databases, account } from '../appwriteConfig';
-
+import {styles} from '../styling/HomeScreen.style'
 const { width } = Dimensions.get('window');
 const BUTTON_FONT_SIZE = width * 0.035;
 

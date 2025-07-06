@@ -4,11 +4,11 @@
     "slug": "kids-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/images/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,21 +17,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "APPWRITE_ENDPOINT": "https://your-appwrite-server.com/v1",
-      "APPWRITE_PROJECT_ID": "685ff7d300149bd01e90",
-      "DATABASE_ID": "685ff7d300149bd01e90",
-      "PREFS_COLLECTION_ID": "685ff804002f2c6e4df9",
-      "PARTICIPATIONS_COLLECTION_ID": "68600db0000187a5eda8",
-      "BROKER_URL": "ws://192.168.178.38:9001"
     }
   }
 }
