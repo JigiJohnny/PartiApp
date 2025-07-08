@@ -79,7 +79,7 @@ client.subscribe('kinderapp/herne');
 ```
 
 Wenn du lokal auf Windows arbeitest:
-- Nimm deine **lokale IP**, z.B. `192.168.178.38`.
+- Nimm deine **lokale IP**, z.B. `192.168.***.**`.
 
 ---
 
