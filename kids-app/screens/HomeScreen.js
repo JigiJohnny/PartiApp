@@ -13,7 +13,7 @@ import {
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
 import mqtt from 'mqtt';
-import logo from '../assets/images/PartiApp_Logo.png';
+import logo from '../assets/images/PartiApp_Logo.jpg';
 import { databases, account } from '../appwriteConfig';
 
 const { width } = Dimensions.get('window');

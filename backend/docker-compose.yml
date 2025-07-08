@@ -6,13 +6,12 @@ services:
       - "1883:1883"
       - "9001:9001"
     volumes:
-      - ./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mqtt/config/mosquitto.conf:/mosquitto/config
       - ./mqtt/data:/mosquitto/data
       - ./mqtt/log:/mosquitto/log
 
   publisher:
-    build: ./app
+    build: ./publisher
     depends_on:
       - mqtt-broker
-    volumes:
-      - ./app:/usr/src/app
+ 

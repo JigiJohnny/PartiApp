@@ -6,10 +6,11 @@ WORKDIR /usr/src/app
 
 # Kopiere package.json + install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --omit=dev
 
-# Kopiere restliche App
-COPY . .
+
+# Kopiere source
+COPY src/ ./src
 
 # Starte dein Script
-CMD ["node", "mqttPublisher.js"]
+CMD ["node", "src/mqttPublisher.js"]
