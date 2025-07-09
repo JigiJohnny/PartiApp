@@ -1,16 +1,15 @@
-# backend/app/Dockerfile
-FROM node:20
+# superkleines Node Image
+FROM node:20-slim
 
-# Arbeitsverzeichnis im Container
 WORKDIR /usr/src/app
 
-# Kopiere package.json + install dependencies
+# nur package.json für Install
 COPY package*.json ./
 RUN npm install --omit=dev
 
-
-# Kopiere source
+# dann Quellcode
 COPY src/ ./src
+COPY offers.json .
 
-# Starte dein Script
+# Start
 CMD ["node", "src/mqttPublisher.js"]

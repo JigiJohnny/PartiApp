@@ -2,47 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert, SafeAreaView, ScrollView } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import * as Location from 'expo-location';
+import mqtt from 'mqtt';
 
-const offers = [
-  {
-    id: '1',
-    title: 'Abenteuer im Park',
-    description: 'Schatzsuche im Stadtpark!',
-    category: 'Outdoor',
-    latitude: 51.5363,
-    longitude: 7.2005,
-    date: '2025-06-28',
-  },
-  {
-    id: '2',
-    title: 'Kinderkino',
-    description: 'Filmspaß im Jugendzentrum.',
-    category: 'Kultur',
-    latitude: 51.5309,
-    longitude: 7.2145,
-    date: '2025-07-01',
-  },
-  {
-    id: '3',
-    title: 'Sport im Freien',
-    description: 'Bewegung und Spiele auf dem Bolzplatz.',
-    category: 'Sport',
-    latitude: 51.5340,
-    longitude: 7.2090,
-    date: '2025-07-02',
-  },
-];
-
-const categories = ['Alle', 'Outdoor', 'Kultur', 'Sport'];
+const categories = ['Alle', 'Outdoor', 'Kultur', 'Sport', 'Medizin', 'Bildung', 'Freizeit'];
 
 export default function MapScreen({ navigation }) {
+  const [offers, setOffers] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('Alle');
   const [userLocation, setUserLocation] = useState(null);
 
   const filteredOffers =
     selectedCategory === 'Alle'
       ? offers
-      : offers.filter((o) => o.category === selectedCategory);
+      : offers.filter((o) =>
+          (o.category || '').toLowerCase().includes(selectedCategory.toLowerCase())
+        );
 
   useEffect(() => {
     (async () => {
@@ -60,29 +34,53 @@ export default function MapScreen({ navigation }) {
     })();
   }, []);
 
+  useEffect(() => {
+    const client = mqtt.connect('ws://192.168.178.38:9001');
+    client.on('connect', () => {
+      console.log('✅ MQTT verbunden');
+      client.subscribe('kinderapp/herne', (err) => {
+        if (!err) console.log('🎉 Subscribed to kinderapp/herne');
+      });
+    });
+
+    client.on('message', (topic, message) => {
+      try {
+        const data = JSON.parse(message.toString());
+        setOffers(data);
+      } catch (err) {
+        console.error('❌ MQTT JSON Fehler:', err.message);
+      }
+    });
+
+    return () => client.end();
+  }, []);
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <MapView
           style={styles.map}
           initialRegion={{
-            latitude: 51.5350,
-            longitude: 7.2100,
+            latitude: userLocation?.latitude || 51.5350,
+            longitude: userLocation?.longitude || 7.2100,
             latitudeDelta: 0.02,
             longitudeDelta: 0.02,
           }}
           showsUserLocation={true}
         >
-          {filteredOffers.map((offer) => (
+          {filteredOffers.map((offer, idx) => (
             <Marker
-              key={offer.id}
-              coordinate={{ latitude: offer.latitude, longitude: offer.longitude }}
+              key={idx}
+              coordinate={{
+                latitude: offer.latitude || 51.5350,
+                longitude: offer.longitude || 7.2100,
+              }}
             >
               <Callout onPress={() => navigation.navigate('Details', { offer })}>
-                <View style={{ maxWidth: 200 }}>
+                <View style={{ maxWidth: 220 }}>
                   <Text style={{ fontWeight: 'bold' }}>{offer.title}</Text>
-                  <Text>{offer.description}</Text>
-                  <Text style={{ fontStyle: 'italic' }}>{offer.category}</Text>
+                  <Text>{offer.description || offer.allText || ''}</Text>
+                  <Text style={{ fontStyle: 'italic' }}>{offer.category || ''}</Text>
                   <Text style={{ color: '#888' }}>{offer.date}</Text>
                   <Text style={{ color: 'blue', marginTop: 5 }}>➤ Details anzeigen</Text>
                 </View>
@@ -99,7 +97,6 @@ export default function MapScreen({ navigation }) {
           )}
         </MapView>
 
-        {/* Chips-Bar über der Map */}
         <View style={styles.chipContainer}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 10 }}>
             {categories.map((cat) => (

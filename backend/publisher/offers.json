@@ -1,14 +1,23 @@
 [
   {
-    "title": "688 Angebot(e) für die Altersgruppe \nAktuelle Auswahl:\nKeine Auswahl",
-    "description": "",
+    "title": "707 Angebot(e) für die Altersgruppe \nAktuelle Auswahl:\nKeine Auswahl",
+    "allText": "",
+    "paragraphs": [],
     "date": "",
     "location": "",
-    "tags": []
+    "tags": [],
+    "extraTags": [],
+    "latitude": 51.5386,
+    "longitude": 7.2257
   },
   {
     "title": "\"Bestimmt verdreht\" - Praxis für Kinder- und Jugendlichenpsychotherapie\nBestimmt verdreht - Praxis für Kinder- und Jugendlichenpsychotherapie",
-    "description": "Als Kinder- und Jugendlichenpsychotherapeutin habe ich es mir zur Aufgabe gemacht, gemeinsam mit Kindern, Jugendlichen und ihren Bezugspersonen herauszufinden, wie viel Verdrehtsein zu viel, wie viel [...]",
+    "allText": "Als Kinder- und Jugendlichenpsychotherapeutin habe ich es mir zur Aufgabe gemacht, gemeinsam mit Kindern, Jugendlichen und ihren Bezugspersonen herauszufinden, wie viel Verdrehtsein zu viel, wie viel [...] | Dauerhaftes Angebot | Eickeler Markt 3B, 44651 Herne",
+    "paragraphs": [
+      "Als Kinder- und Jugendlichenpsychotherapeutin habe ich es mir zur Aufgabe gemacht, gemeinsam mit Kindern, Jugendlichen und ihren Bezugspersonen herauszufinden, wie viel Verdrehtsein zu viel, wie viel [...]",
+      "Dauerhaftes Angebot",
+      "Eickeler Markt 3B, 44651 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Eickeler Markt 3B, 44651 Herne",
     "tags": [
@@ -18,22 +27,49 @@
       "10 bis 16 Jahre",
       "16 bis 18 Jahre",
       "Medizinische Versorgung"
-    ]
+    ],
+    "extraTags": [
+      "1 bis 3 Jahre",
+      "3 bis 6 Jahre",
+      "6 bis 10 Jahre",
+      "10 bis 16 Jahre",
+      "16 bis 18 Jahre",
+      "Medizinische Versorgung"
+    ],
+    "latitude": 51.5245,
+    "longitude": 7.1923
   },
   {
     "title": "Stadt Herne Fachbereich Kinder-Jugend-Familie\nMechanik-Bionik Spielplatz",
-    "description": "Spiele-Landschaft mit Kletterturm. Beim Wippen, Rutschen und Schaukeln kannst du physikalische Gesetze lernen und verstehen. (Siehe Beschreibung unter Freizeitangebote [...]",
+    "allText": "Spiele-Landschaft mit Kletterturm. Beim Wippen, Rutschen und Schaukeln kannst du physikalische Gesetze lernen und verstehen. (Siehe Beschreibung unter Freizeitangebote [...] | Dauerhaftes Angebot | Gysenbergstraße 75, 44627 Herne",
+    "paragraphs": [
+      "Spiele-Landschaft mit Kletterturm. Beim Wippen, Rutschen und Schaukeln kannst du physikalische Gesetze lernen und verstehen. (Siehe Beschreibung unter Freizeitangebote [...]",
+      "Dauerhaftes Angebot",
+      "Gysenbergstraße 75, 44627 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Gysenbergstraße 75, 44627 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "andere Angebotsart"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "andere Angebotsart"
+    ],
+    "latitude": 51.5427,
+    "longitude": 7.249
   },
   {
     "title": "Jugendkunstschule Herne e.V.\n\"1000 tolle Töne\" - Instrumentalunterricht und Gesang",
-    "description": "Ab 6 Jahren Klavier / Keyboard / Gitarre / Ukulele / E-Gitarre / E-Bass / Blockflöte / Altflöte / Querflöte / Klarinette / Saxophon / Schlaginstrumente / Percussion / Gesang / Vokalproj [...]",
+    "allText": "Ab 6 Jahren Klavier / Keyboard / Gitarre / Ukulele / E-Gitarre / E-Bass / Blockflöte / Altflöte / Querflöte / Klarinette / Saxophon / Schlaginstrumente / Percussion / Gesang / Vokalproj [...] | Dauerhaftes Angebot | Dorstener Straße 476, 44653 Herne",
+    "paragraphs": [
+      "Ab 6 Jahren Klavier / Keyboard / Gitarre / Ukulele / E-Gitarre / E-Bass / Blockflöte / Altflöte / Querflöte / Klarinette / Saxophon / Schlaginstrumente / Percussion / Gesang / Vokalproj [...]",
+      "Dauerhaftes Angebot",
+      "Dorstener Straße 476, 44653 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Dorstener Straße 476, 44653 Herne",
     "tags": [
@@ -42,11 +78,25 @@
       "16 bis 18 Jahre",
       "18+ Jahre",
       "Kurs / Workshop"
-    ]
+    ],
+    "extraTags": [
+      "6 bis 10 Jahre",
+      "10 bis 16 Jahre",
+      "16 bis 18 Jahre",
+      "18+ Jahre",
+      "Kurs / Workshop"
+    ],
+    "latitude": 51.555,
+    "longitude": 7.202
   },
   {
     "title": "Bürger-Selbsthilfe-Zentrum (buez)\n\"21 Zwerge\" - Elterngruppe von Kindern mit Down-Syndrom",
-    "description": "Zielgruppe: Betroffene, Interessierte Aktivitäten: Gesprächskreis für Eltern von Babys und Kleinkindern mit Down-Syndrom. Im Vordergrund steht der persönliche Austausch, um betroff [...]",
+    "allText": "Zielgruppe: Betroffene, Interessierte Aktivitäten: Gesprächskreis für Eltern von Babys und Kleinkindern mit Down-Syndrom. Im Vordergrund steht der persönliche Austausch, um betroff [...] | Dauerhaftes Angebot | Rathausstraße 6, 44649 Herne",
+    "paragraphs": [
+      "Zielgruppe: Betroffene, Interessierte Aktivitäten: Gesprächskreis für Eltern von Babys und Kleinkindern mit Down-Syndrom. Im Vordergrund steht der persönliche Austausch, um betroff [...]",
+      "Dauerhaftes Angebot",
+      "Rathausstraße 6, 44649 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Rathausstraße 6, 44649 Herne",
     "tags": [
@@ -54,55 +104,116 @@
       "0 bis 1 Jahre",
       "1 bis 3 Jahre",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "0 bis 1 Jahre",
+      "1 bis 3 Jahre",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.532,
+    "longitude": 7.2195
   },
   {
     "title": "Bürger-Selbsthilfe-Zentrum (buez)\n\"Die Insel\" Selbsthilfegruppe für Angehörige und Freunde von Suchtkranken",
-    "description": "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis für Betroffene, Beratung auch für Nichtmitglieder, Hilfestellung und Erfahrungsaustausch Die Gruppe ist ein offener [...]",
+    "allText": "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis für Betroffene, Beratung auch für Nichtmitglieder, Hilfestellung und Erfahrungsaustausch Die Gruppe ist ein offener [...] | Dauerhaftes Angebot | Düngelstraße 30, 44623 Herne",
+    "paragraphs": [
+      "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis für Betroffene, Beratung auch für Nichtmitglieder, Hilfestellung und Erfahrungsaustausch Die Gruppe ist ein offener [...]",
+      "Dauerhaftes Angebot",
+      "Düngelstraße 30, 44623 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Düngelstraße 30, 44623 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.5365,
+    "longitude": 7.219
   },
   {
     "title": "Bürger-Selbsthilfe-Zentrum (buez)\n\"Freundeskreis\"",
-    "description": "Zielgruppe: Betroffene Alkoholiker*innen (trocken) Aktivitäten: Gespräche für - mit Betroffene(n), Studienfahrten, Besuch von klinischen Veranstaltungen, Jahrestreffen Fredeburg Termine [...]",
+    "allText": "Zielgruppe: Betroffene Alkoholiker*innen (trocken) Aktivitäten: Gespräche für - mit Betroffene(n), Studienfahrten, Besuch von klinischen Veranstaltungen, Jahrestreffen Fredeburg Termine [...] | Dauerhaftes Angebot | Zeppelinstraße 1, 44651 Herne",
+    "paragraphs": [
+      "Zielgruppe: Betroffene Alkoholiker*innen (trocken) Aktivitäten: Gespräche für - mit Betroffene(n), Studienfahrten, Besuch von klinischen Veranstaltungen, Jahrestreffen Fredeburg Termine [...]",
+      "Dauerhaftes Angebot",
+      "Zeppelinstraße 1, 44651 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Zeppelinstraße 1, 44651 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.5342,
+    "longitude": 7.2135
   },
   {
     "title": "Caritasverband Herne e.V.\n\"Stark in der Gruppe\"-Gesprächsgruppe für Alleinerziehende",
-    "description": "Der Alltag ist für Eltern oft herausfordernd, erst recht, wenn man mit allem alleine dasteht. Es gilt vieles zugleich \"unter einen Hut\" zu bekommen. Häufig fehlt es an Unterstü [...]",
+    "allText": "Der Alltag ist für Eltern oft herausfordernd, erst recht, wenn man mit allem alleine dasteht. Es gilt vieles zugleich \"unter einen Hut\" zu bekommen. Häufig fehlt es an Unterstü [...] | Dauerhaftes Angebot | Glockenstraße 7, 44623 Herne",
+    "paragraphs": [
+      "Der Alltag ist für Eltern oft herausfordernd, erst recht, wenn man mit allem alleine dasteht. Es gilt vieles zugleich \"unter einen Hut\" zu bekommen. Häufig fehlt es an Unterstü [...]",
+      "Dauerhaftes Angebot",
+      "Glockenstraße 7, 44623 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Glockenstraße 7, 44623 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.536,
+    "longitude": 7.218
   },
   {
     "title": "City Center Herne\n\"Willkommen im Club\" - Vereine stellen sich vor",
-    "description": "Am Samstag, den 30. August 2025, heißt es in Herne wieder: Willkommen im Club - Vereine stellen sich vor! Von 12:00 bis 18:00 Uhr verwandelt sich die Bahnhofstraße vor dem City Center in [...]",
+    "allText": "Am Samstag, den 30. August 2025, heißt es in Herne wieder: Willkommen im Club - Vereine stellen sich vor! Von 12:00 bis 18:00 Uhr verwandelt sich die Bahnhofstraße vor dem City Center in [...] | Von 30.08.2025 (12:00 Uhr) bis 30.08.2025 (23:00 Uhr) | Bahnhofstraße 7, 44623 Herne",
+    "paragraphs": [
+      "Am Samstag, den 30. August 2025, heißt es in Herne wieder: Willkommen im Club - Vereine stellen sich vor! Von 12:00 bis 18:00 Uhr verwandelt sich die Bahnhofstraße vor dem City Center in [...]",
+      "Von 30.08.2025 (12:00 Uhr) bis 30.08.2025 (23:00 Uhr)",
+      "Bahnhofstraße 7, 44623 Herne"
+    ],
     "date": "Von 30.08.2025 (12:00 Uhr) bis 30.08.2025 (23:00 Uhr)",
     "location": "Bahnhofstraße 7, 44623 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Veranstaltung"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Veranstaltung"
+    ],
+    "latitude": 51.535,
+    "longitude": 7.2195
   },
   {
     "title": "Bundeskonferenz für Erziehungsberatung e.V.\n#FrüheHilfen - Online-Beratung für (werdende) Eltern und Familien mit Babys und Kleinkindern bis zu 3 Jahren",
-    "description": "Sie sind schwanger, haben Fragen zur Geburt und was danach kommt? Sie sind gerade Mutter oder Vater geworden? Sie haben ein Baby, das viel schreit? Ihr Kind erscheint Ihnen plötzlich rebellisch u [...]",
+    "allText": "Sie sind schwanger, haben Fragen zur Geburt und was danach kommt? Sie sind gerade Mutter oder Vater geworden? Sie haben ein Baby, das viel schreit? Ihr Kind erscheint Ihnen plötzlich rebellisch u [...] | Dauerhaftes Angebot | Herrnstraße 53, 90763 Fürth",
+    "paragraphs": [
+      "Sie sind schwanger, haben Fragen zur Geburt und was danach kommt? Sie sind gerade Mutter oder Vater geworden? Sie haben ein Baby, das viel schreit? Ihr Kind erscheint Ihnen plötzlich rebellisch u [...]",
+      "Dauerhaftes Angebot",
+      "Herrnstraße 53, 90763 Fürth"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Herrnstraße 53, 90763 Fürth",
     "tags": [
@@ -111,11 +222,24 @@
       "0 bis 1 Jahre",
       "1 bis 3 Jahre",
       "Online Angebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "vor der Geburt",
+      "0 bis 1 Jahre",
+      "1 bis 3 Jahre",
+      "Online Angebot"
+    ],
+    "latitude": 49.4636,
+    "longitude": 11.012
   },
   {
     "title": "Stadtsportbund Herne e.V.\n#Streetkickerz - Fußballtraining",
-    "description": "Wenn du zwischen 9 und 14 Jahre alt bist, findet für dich auf mehreren Bolzplätzen in Herne ein kostenloses Training unter professioneller Anleitung statt. Dort ist der ideale Platz für [...]",
+    "allText": "Wenn du zwischen 9 und 14 Jahre alt bist, findet für dich auf mehreren Bolzplätzen in Herne ein kostenloses Training unter professioneller Anleitung statt. Dort ist der ideale Platz für [...] | Dauerhaftes Angebot",
+    "paragraphs": [
+      "Wenn du zwischen 9 und 14 Jahre alt bist, findet für dich auf mehreren Bolzplätzen in Herne ein kostenloses Training unter professioneller Anleitung statt. Dort ist der ideale Platz für [...]",
+      "Dauerhaftes Angebot"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "",
     "tags": [
@@ -123,116 +247,293 @@
       "6 bis 10 Jahre",
       "10 bis 16 Jahre",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "6 bis 10 Jahre",
+      "10 bis 16 Jahre",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.5386,
+    "longitude": 7.2257
   },
   {
     "title": "JobCenter Herne\n(Wieder) Einstieg in den Beruf",
-    "description": "Orientierung und Begleitung für den (Wieder-) Einstieg in den Arbeitsmarkt Teilzeitausbildung für Leistungsempfänger nach dem SGB II. Informieren kann sich aber [...]",
+    "allText": "Orientierung und Begleitung für den (Wieder-) Einstieg in den Arbeitsmarkt Teilzeitausbildung für Leistungsempfänger nach dem SGB II. Informieren kann sich aber [...] | Dauerhaftes Angebot | Koniner Straße 4, 44625 Herne",
+    "paragraphs": [
+      "Orientierung und Begleitung für den (Wieder-) Einstieg in den Arbeitsmarkt Teilzeitausbildung für Leistungsempfänger nach dem SGB II. Informieren kann sich aber [...]",
+      "Dauerhaftes Angebot",
+      "Koniner Straße 4, 44625 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Koniner Straße 4, 44625 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Beratung"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Beratung"
+    ],
+    "latitude": 51.5308,
+    "longitude": 7.2065
   },
   {
     "title": "Klinik für Frauenheilkunde und Geburtshilfe - Marien Hospital Herne - Universitätsklinikum der Ruhr-Universität Bochum\n24-Stunden Stillhotline / Stillambulanz",
-    "description": "Viele Dinge benötigen Zeit zum Üben – so auch das Stillen. Viele Mütter und Kinder benötigen nach der Entlassung aus dem Krankenhaus eine gemeinsame Eingewöhnungszeit. I [...]",
+    "allText": "Viele Dinge benötigen Zeit zum Üben – so auch das Stillen. Viele Mütter und Kinder benötigen nach der Entlassung aus dem Krankenhaus eine gemeinsame Eingewöhnungszeit. I [...] | Dauerhaftes Angebot | Hölkeskampring 40, 44625 Herne",
+    "paragraphs": [
+      "Viele Dinge benötigen Zeit zum Üben – so auch das Stillen. Viele Mütter und Kinder benötigen nach der Entlassung aus dem Krankenhaus eine gemeinsame Eingewöhnungszeit. I [...]",
+      "Dauerhaftes Angebot",
+      "Hölkeskampring 40, 44625 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Hölkeskampring 40, 44625 Herne",
     "tags": [
       "Kostenloses Angebot",
       "0 bis 1 Jahre",
       "Beratung"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "0 bis 1 Jahre",
+      "Beratung"
+    ],
+    "latitude": 51.5305,
+    "longitude": 7.204
   },
   {
     "title": "Katholisches Klinikum Bochum - St. Josef-Hospital\n24-Stunden-Notfallambulanz für Kinder- und Jugendmedizin",
-    "description": "Insgesamt 35 Kinderärzte aus Bochum und Herne werden mit ihrem Team die Behandlungen in Notfallzeiten neben der eigenen Praxis stemmen. Dabei soll der Notdienst keinesfalls als Verlängerung [...]",
+    "allText": "Insgesamt 35 Kinderärzte aus Bochum und Herne werden mit ihrem Team die Behandlungen in Notfallzeiten neben der eigenen Praxis stemmen. Dabei soll der Notdienst keinesfalls als Verlängerung [...] | Dauerhaftes Angebot | Alexandrinenstraße 5, 44791 Bochum",
+    "paragraphs": [
+      "Insgesamt 35 Kinderärzte aus Bochum und Herne werden mit ihrem Team die Behandlungen in Notfallzeiten neben der eigenen Praxis stemmen. Dabei soll der Notdienst keinesfalls als Verlängerung [...]",
+      "Dauerhaftes Angebot",
+      "Alexandrinenstraße 5, 44791 Bochum"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Alexandrinenstraße 5, 44791 Bochum",
     "tags": [
       "altersunabhängig",
       "Medizinische Versorgung"
-    ]
+    ],
+    "extraTags": [
+      "altersunabhängig",
+      "Medizinische Versorgung"
+    ],
+    "latitude": 51.4907,
+    "longitude": 7.2389
   },
   {
     "title": "Abenteuerspielplatz Hasenkamp\nAbenteuerspielplatz Hasenkamp",
-    "description": "Liebe Kinder, liebe Eltern, die Mitarbeiter*innen des Abenteuerspielplatz Hasekamp freuen sich auf euren Besuch! Dienstag bis Freitag in der Zeit von 14:00 bis 18:00 Uhr haben wir für Euch ge&oum [...]",
+    "allText": "Liebe Kinder, liebe Eltern, die Mitarbeiter*innen des Abenteuerspielplatz Hasekamp freuen sich auf euren Besuch! Dienstag bis Freitag in der Zeit von 14:00 bis 18:00 Uhr haben wir für Euch ge&oum [...] | Dauerhaftes Angebot | Im Hasenkamp 24, 44625 Herne",
+    "paragraphs": [
+      "Liebe Kinder, liebe Eltern, die Mitarbeiter*innen des Abenteuerspielplatz Hasekamp freuen sich auf euren Besuch! Dienstag bis Freitag in der Zeit von 14:00 bis 18:00 Uhr haben wir für Euch ge&oum [...]",
+      "Dauerhaftes Angebot",
+      "Im Hasenkamp 24, 44625 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Im Hasenkamp 24, 44625 Herne",
     "tags": [
       "Kostenloses Angebot",
       "6 bis 10 Jahre",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "6 bis 10 Jahre",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.5278,
+    "longitude": 7.2103
+  },
+  {
+    "title": "Jugendkunstschule Herne e.V.\nAbstrakt Graffiti",
+    "allText": "Lerne die Kunst des Graffiti einmal anders kennen. Ihr lernt das Sprayen von Graffiti auf Passepartout, Leinwänden und Stoffbeuteln kennen, nutzt unterschiedliche Materialien, um Effekte zu erzeu [...] | Von 25.08.2025 (11:00 Uhr) bis 25.08.2025 (15:00 Uhr) | Dorstener Straße 476, 44653 Herne",
+    "paragraphs": [
+      "Lerne die Kunst des Graffiti einmal anders kennen. Ihr lernt das Sprayen von Graffiti auf Passepartout, Leinwänden und Stoffbeuteln kennen, nutzt unterschiedliche Materialien, um Effekte zu erzeu [...]",
+      "Von 25.08.2025 (11:00 Uhr) bis 25.08.2025 (15:00 Uhr)",
+      "Dorstener Straße 476, 44653 Herne"
+    ],
+    "date": "Von 25.08.2025 (11:00 Uhr) bis 25.08.2025 (15:00 Uhr)",
+    "location": "Dorstener Straße 476, 44653 Herne",
+    "tags": [
+      "10 bis 16 Jahre",
+      "Kurs / Workshop"
+    ],
+    "extraTags": [
+      "10 bis 16 Jahre",
+      "Kurs / Workshop"
+    ],
+    "latitude": 51.555,
+    "longitude": 7.202
+  },
+  {
+    "title": "Jugendkunstschule Herne e.V.\nAbstrakte Winterlandschaften",
+    "allText": "Wie kann der Winter noch winterlicher werden? Mit eigenen Winterbildern. In diesem Workshop könnt ihr Leinwände mit euren realistischen oder auch phantasievollen Winterlandschaften gestalten [...] | Von 13.11.2025 (14:00 Uhr) bis 13.11.2025 (17:00 Uhr) | Dorstener Straße 476, 44653 Herne",
+    "paragraphs": [
+      "Wie kann der Winter noch winterlicher werden? Mit eigenen Winterbildern. In diesem Workshop könnt ihr Leinwände mit euren realistischen oder auch phantasievollen Winterlandschaften gestalten [...]",
+      "Von 13.11.2025 (14:00 Uhr) bis 13.11.2025 (17:00 Uhr)",
+      "Dorstener Straße 476, 44653 Herne"
+    ],
+    "date": "Von 13.11.2025 (14:00 Uhr) bis 13.11.2025 (17:00 Uhr)",
+    "location": "Dorstener Straße 476, 44653 Herne",
+    "tags": [
+      "6 bis 10 Jahre",
+      "Kurs / Workshop"
+    ],
+    "extraTags": [
+      "6 bis 10 Jahre",
+      "Kurs / Workshop"
+    ],
+    "latitude": 51.555,
+    "longitude": 7.202
   },
   {
     "title": "Adoptionsvermittlungsstelle\nAdoptionsvermittlungsstelle",
-    "description": "Das Wohl des Kindes steht bei der Vermittlung eines Kindes in die Adoption im Mittelpunkt. Aus diesem Grund suchen wir passende Eltern für ein Kind - nicht umgekehrt. Das Ziel einer Vermittlung i [...]",
+    "allText": "Das Wohl des Kindes steht bei der Vermittlung eines Kindes in die Adoption im Mittelpunkt. Aus diesem Grund suchen wir passende Eltern für ein Kind - nicht umgekehrt. Das Ziel einer Vermittlung i [...] | Dauerhaftes Angebot | Hauptstraße 241, 44649 Herne",
+    "paragraphs": [
+      "Das Wohl des Kindes steht bei der Vermittlung eines Kindes in die Adoption im Mittelpunkt. Aus diesem Grund suchen wir passende Eltern für ein Kind - nicht umgekehrt. Das Ziel einer Vermittlung i [...]",
+      "Dauerhaftes Angebot",
+      "Hauptstraße 241, 44649 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Hauptstraße 241, 44649 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Beratung"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Beratung"
+    ],
+    "latitude": 51.5386,
+    "longitude": 7.2257
   },
   {
     "title": "Klinik für Frauenheilkunde und Geburtshilfe St. Anna Hospital\nAkupunktursprechstunde",
-    "description": "In der Akupunktursprechstunde bieten wir Ihnen die geburtsvorbereitende Akupunktur an. Diese unterstützt die Reifung des Gebärmutterhalses und kann so zu einer Verkürzung der Geburtsdau [...]",
+    "allText": "In der Akupunktursprechstunde bieten wir Ihnen die geburtsvorbereitende Akupunktur an. Diese unterstützt die Reifung des Gebärmutterhalses und kann so zu einer Verkürzung der Geburtsdau [...] | Dauerhaftes Angebot | Hospitalstraße 19, 44649 Herne",
+    "paragraphs": [
+      "In der Akupunktursprechstunde bieten wir Ihnen die geburtsvorbereitende Akupunktur an. Diese unterstützt die Reifung des Gebärmutterhalses und kann so zu einer Verkürzung der Geburtsdau [...]",
+      "Dauerhaftes Angebot",
+      "Hospitalstraße 19, 44649 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Hospitalstraße 19, 44649 Herne",
     "tags": [
       "vor der Geburt",
       "Medizinische Versorgung"
-    ]
+    ],
+    "extraTags": [
+      "vor der Geburt",
+      "Medizinische Versorgung"
+    ],
+    "latitude": 51.5318,
+    "longitude": 7.2202
   },
   {
     "title": "Bürger-Selbsthilfe-Zentrum (buez)\nAl-Anon Familiengruppe",
-    "description": "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis. Die Al-Anon Familiengruppe unterstützt alldiejenigen, deren Leben jetzt oder in der Vergangenheit durch das Trinken ein [...]",
+    "allText": "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis. Die Al-Anon Familiengruppe unterstützt alldiejenigen, deren Leben jetzt oder in der Vergangenheit durch das Trinken ein [...] | Dauerhaftes Angebot | Herzogstraße 23, 44651 Herne",
+    "paragraphs": [
+      "Zielgruppe: Freunde, Angehörige Aktivitäten: Gesprächskreis. Die Al-Anon Familiengruppe unterstützt alldiejenigen, deren Leben jetzt oder in der Vergangenheit durch das Trinken ein [...]",
+      "Dauerhaftes Angebot",
+      "Herzogstraße 23, 44651 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Herzogstraße 23, 44651 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Gruppenangebot"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Gruppenangebot"
+    ],
+    "latitude": 51.531,
+    "longitude": 7.215
   },
   {
     "title": "Bürger-Selbsthilfe-Zentrum (buez)\nAlkoholsucht - Anonyme Alkoholiker",
-    "description": "Zielgruppe: Betroffene, Angehörige, Interessierte Aktivitäten: Nur [...]",
+    "allText": "Zielgruppe: Betroffene, Angehörige, Interessierte Aktivitäten: Nur [...] | Dauerhaftes Angebot | Rathausstraße 6, 44649 Herne",
+    "paragraphs": [
+      "Zielgruppe: Betroffene, Angehörige, Interessierte Aktivitäten: Nur [...]",
+      "Dauerhaftes Angebot",
+      "Rathausstraße 6, 44649 Herne"
+    ],
     "date": "Dauerhaftes Angebot",
     "location": "Rathausstraße 6, 44649 Herne",
     "tags": [
       "Kostenloses Angebot",
       "altersunabhängig",
       "Beratung"
-    ]
+    ],
+    "extraTags": [
+      "Kostenloses Angebot",
+      "altersunabhängig",
+      "Beratung"
+    ],
+    "latitude": 51.532,
+    "longitude": 7.2195
   },
   {
-    "title": "Gemeinnützige Beschäftigungsgesellschaft Herne mbH\nAlles unter einem Hut: Familie und Beruf vereinbaren",
-    "description": "Für Eltern mit (kleinen) Kindern ist der Wiedereinstieg in Arbeit eine echte Herausforderung. Viele Fragen stellen sich: Welche Möglichkeiten der Kinderbetreuung gibt es in Herne und wie mel [...]",
-    "date": "Von 08.07.2025 (10:00 Uhr) bis 08.07.2025 (13:00 Uhr)",
-    "location": "Südstraße 19, 44625 Herne",
-    "tags": [
-      "Kostenloses Angebot",
-      "0 bis 1 Jahre",
-      "1 bis 3 Jahre",
-      "Beratung"
-    ]
+    "title": "Familienportal Herne",
+    "allText": "Schreiben Sie uns eine Nachricht an familienbuero@herne.de. | -- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen",
+    "paragraphs": [
+      "Schreiben Sie uns eine Nachricht an familienbuero@herne.de.",
+      "-- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen"
+    ],
+    "date": "",
+    "location": "",
+    "tags": [],
+    "extraTags": [
+      "Holger Närrlich",
+      "familienbuero@herne.de",
+      "Facebook",
+      "Instagram"
+    ],
+    "latitude": 51.5386,
+    "longitude": 7.2257
   },
   {
-    "title": "Gemeinnützige Beschäftigungsgesellschaft Herne mbH\nAlles unter einem Hut: Familie und Beruf vereinbaren",
-    "description": "Für Eltern mit (kleinen) Kindern ist der Wiedereinstieg in Arbeit eine echte Herausforderung. Viele Fragen stellen sich: Welche Möglichkeiten der Kinderbetreuung gibt es in Herne und wie mel [...]",
-    "date": "Von 15.07.2025 (10:00 Uhr) bis 15.07.2025 (13:00 Uhr)",
-    "location": "Europaplatz 4, 44623 Herne",
-    "tags": [
-      "Kostenloses Angebot",
-      "0 bis 1 Jahre",
-      "1 bis 3 Jahre",
-      "Beratung"
-    ]
+    "title": "Haben Sie ein Angebot und möchten Sie es kostenlos veröffentlichen?",
+    "allText": "Schreiben Sie uns eine Nachricht an familienbuero@herne.de. | -- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen",
+    "paragraphs": [
+      "Schreiben Sie uns eine Nachricht an familienbuero@herne.de.",
+      "-- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen"
+    ],
+    "date": "",
+    "location": "",
+    "tags": [],
+    "extraTags": [
+      "Holger Närrlich",
+      "familienbuero@herne.de",
+      "Facebook",
+      "Instagram"
+    ],
+    "latitude": 51.5386,
+    "longitude": 7.2257
+  },
+  {
+    "title": "Angebote in anderen Orten und NRW finden",
+    "allText": "Schreiben Sie uns eine Nachricht an familienbuero@herne.de. | -- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen",
+    "paragraphs": [
+      "Schreiben Sie uns eine Nachricht an familienbuero@herne.de.",
+      "-- Auswahl Ort --\nAachen\nAachen (Städteregion)\nArnsberg\nBeckum\nBergheim\nBonn\nBornheim\nBottrop\nCastrop-Rauxel\nDatteln\nDetmold\nDinslaken\nDortmund\nDüren (KJA)\nDüsseldorf\nErftstadt\nErkrath\nEssen\nEuskirchen (KJA)\nGummersbach\nHamm\nHattingen\nHeiligenhaus\nHerdecke\nHerford\nHerne\nHochsauerlandkreis (KJA)\nHöxter (KJA)\nHürth\nKerpen\nKleve\nKöln\nLeverkusen\nLippe (KJA)\nLöhne\nLüdenscheid\nLünen\nMärkischer Kreis (KJA)\nMoers\nOberhausen\nOer-Erkenschwick\nPaderborn\nPulheim\nRhein-Sieg-Kreis (KJA)\nRheinbach\nSankt Augustin\nSchwerte\nSiegen\nSteinfurt (KJA)\nTroisdorf\nUnna\nViersen (KJA)\nWaltrop\nWesel\nWillich\nWipperfürth\nWuppertal\nWürselen"
+    ],
+    "date": "",
+    "location": "",
+    "tags": [],
+    "extraTags": [
+      "Holger Närrlich",
+      "familienbuero@herne.de",
+      "Facebook",
+      "Instagram"
+    ],
+    "latitude": 51.5386,
+    "longitude": 7.2257
   }
 ]

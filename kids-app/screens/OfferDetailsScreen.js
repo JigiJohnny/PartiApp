@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Button, Alert, Dimensions, Linking } from 'react-native';
+import { View, Text, StyleSheet, Button, Alert, Dimensions, Linking, ScrollView } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
@@ -38,11 +38,23 @@ export default function OfferDetailsScreen({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.title}>{offer.title}</Text>
-      <Text style={styles.text}>{offer.description}</Text>
-      <Text style={styles.text}>Kategorie: {offer.category}</Text>
+
+      {offer.allText && <Text style={styles.text}>{offer.allText}</Text>}
+
+      {offer.paragraphs?.length > 0 && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Details</Text>
+          {offer.paragraphs.map((para, idx) => (
+            <Text key={idx} style={styles.text}>• {para}</Text>
+          ))}
+        </View>
+      )}
+
       <Text style={styles.text}>Datum: {offer.date}</Text>
+      <Text style={styles.text}>Ort: {offer.location}</Text>
+
       {distance && (
         <Text style={styles.text}>
           📍 Ca. {(distance / 1000).toFixed(2)} km von deinem Standort entfernt
@@ -68,6 +80,22 @@ export default function OfferDetailsScreen({ route, navigation }) {
         </MapView>
       )}
 
+      {offer.tags?.length > 0 && (
+        <View style={styles.tagContainer}>
+          {offer.tags.map((tag, idx) => (
+            <Text key={idx} style={styles.tag}>{tag}</Text>
+          ))}
+        </View>
+      )}
+
+      {offer.extraTags?.length > 0 && (
+        <View style={styles.tagContainer}>
+          {offer.extraTags.map((tag, idx) => (
+            <Text key={idx} style={[styles.tag, { backgroundColor: '#FF5722' }]}>{tag}</Text>
+          ))}
+        </View>
+      )}
+
       <View style={styles.feedbackContainer}>
         <Text style={styles.feedbackTitle}>Wie findest du dieses Angebot?</Text>
         <View style={styles.buttonGroup}>
@@ -76,21 +104,38 @@ export default function OfferDetailsScreen({ route, navigation }) {
           <Button title="👎 Schlecht" onPress={() => handleFeedback('👎')} color="#F44336" />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
-  text: { fontSize: 16, marginBottom: 5 },
+  text: { fontSize: 16, marginBottom: 6, color: '#333' },
+  section: { marginVertical: 10 },
+  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 6 },
   map: {
     width: '100%',
     height: Dimensions.get('window').height * 0.25,
     marginVertical: 20,
     borderRadius: 10,
   },
-  feedbackContainer: { marginTop: 10 },
+  tagContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 8,
+  },
+  tag: {
+    backgroundColor: '#2196F3',
+    color: '#fff',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 12,
+    marginRight: 8,
+    marginBottom: 8,
+    fontSize: 13,
+  },
+  feedbackContainer: { marginTop: 20 },
   feedbackTitle: { fontSize: 18, marginBottom: 10, fontWeight: 'bold' },
   buttonGroup: {
     gap: 10,

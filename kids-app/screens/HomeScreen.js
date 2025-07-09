@@ -21,6 +21,12 @@ const BUTTON_FONT_SIZE = width * 0.035;
 
 const DATABASE_ID = '685ff7d300149bd01e90';
 const PREFS_COLLECTION_ID = '685ff804002f2c6e4df9';
+const getTagColor = (tag) => {
+  if (tag.toLowerCase().includes('medizin')) return '#F44336';
+  if (tag.toLowerCase().includes('jahre')) return '#4CAF50';
+  if (tag.toLowerCase().includes('versorgung')) return '#3F51B5';
+  return '#FF9800';
+};
 
 export default function HomeScreen({ navigation }) {
   const [offers, setOffers] = useState([]);
@@ -127,30 +133,40 @@ export default function HomeScreen({ navigation }) {
         <Image source={logo} style={styles.logo} resizeMode="contain" />
         <Text style={styles.header}>Empfohlene Angebote 🎯</Text>
 
-        <FlatList
-          data={offers}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.card}
-              onPress={() => navigation.navigate('Details', { offer: item })}
-            >
-              <Text style={styles.title}>{shorten(item.title, 60)}</Text>
-              <Text style={styles.date}>{item.date}</Text>
-              {item.location && <Text style={styles.location}>{item.location}</Text>}
-              <Text style={styles.description}>{shorten(item.description, 100)}</Text>
-              {item.tags?.length > 0 && (
-                <View style={styles.tagContainer}>
-                  {item.tags.slice(0, 4).map((tag, idx) => (
-                    <Text key={idx} style={styles.tag}>{tag}</Text>
-                  ))}
-                </View>
-              )}
-              <Text style={styles.distance}>{formatDistance(item)}</Text>
-            </TouchableOpacity>
-          )}
-        />
+ <FlatList
+  data={offers}
+  keyExtractor={(item, index) => index.toString()}
+  renderItem={({ item }) => (
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate('Details', { offer: item })}
+      activeOpacity={0.8}
+    >
+      <Text style={styles.title}>{shorten(item.title, 60)}</Text>
+      <Text style={styles.date}>📅 {item.date}</Text>
+      {item.location && <Text style={styles.location}>📍 {item.location}</Text>}
+      <Text style={styles.description}>{shorten(item.allText || item.description, 80)}</Text>
 
+      {item.tags?.length > 0 && (
+        <View style={styles.tagContainer}>
+          {item.tags.slice(0, 3).map((tag, idx) => (
+            <Text
+              key={idx}
+              style={[
+                styles.tag,
+                { backgroundColor: getTagColor(tag) }
+              ]}
+            >
+              🏷️ {tag}
+            </Text>
+          ))}
+        </View>
+      )}
+
+      <Text style={styles.distance}>{formatDistance(item)}</Text>
+    </TouchableOpacity>
+  )}
+/>
         <View style={styles.footer}>
           <FooterButton
             emoji="🗳️"
@@ -213,15 +229,15 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
   tag: {
-    backgroundColor: '#2196F3',
-    color: '#fff',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 12,
-    marginRight: 6,
-    marginBottom: 4,
-    fontSize: 12,
-  },
+  backgroundColor: '#2196F3',
+  color: '#fff',
+  paddingHorizontal: 8,
+  paddingVertical: 3,
+  borderRadius: 12,
+  marginRight: 6,
+  marginBottom: 4,
+  fontSize: 12,
+},
   distance: {
     marginTop: 6,
     fontStyle: 'italic',
